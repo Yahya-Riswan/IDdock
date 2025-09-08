@@ -1,0 +1,43 @@
+.home {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 80px);
+  padding: 10px 5%;
+  align-items: center;
+  .left {
+    max-width: 50%;
+
+    h1 {
+      font-size: 38px;
+    }
+    li {
+      font-size: 22px;
+    }
+  }
+  .right {
+    width: 30%;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.022);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    .auth {
+      color: white;
+      align-self: center;
+      font-size: 19px;
+      border: 2px solid white;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .auth:hover {
+      filter: drop-shadow(5px 5px 25px white);
+    }
+  }
+}
