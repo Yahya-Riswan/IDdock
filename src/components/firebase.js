@@ -11,13 +11,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
 
 const firebaseConfig = {
-	apiKey: "AIzaSyCZMGIMT-po-EfF_8xM2sPQ7-kdFf-92n4",
-	authDomain: "iddock-online.firebaseapp.com",
-	projectId: "iddock-online",
-	storageBucket: "iddock-online.firebasestorage.app",
-	messagingSenderId: "1099357637276",
-	appId: "1:1099357637276:web:bfbf7517bf25010b0cfb59",
-	measurementId: "G-FMJDRRSPG0"
+	apiKey: "**********************************",
+	authDomain: "**********************************",
+	projectId: "**************",
+	storageBucket:"***********************",
+	messagingSenderId: "*****************",
+	appId: "**********************************",
+	measurementId: "***************"
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
