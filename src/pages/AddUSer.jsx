@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../sass/AddUser.scss'
 import dbs from '../components/firebase'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 function AddUSer() {
     let user = JSON.parse(localStorage.getItem("user"))
     let navigate = useNavigate()
@@ -31,6 +31,7 @@ function AddUSer() {
     return (
         <div className="adduser">
             <div className="content">
+                <Link to={"/Dashboard"}>Back</Link>
                 <h2>Add New Family Member ...</h2><br />
                 <input type="text" placeholder='Name ...' value={name} onChange={(e) => { setName(e.target.value) }} /><br /><br />
                 <button onClick={AddMember}>Add Member .</button>

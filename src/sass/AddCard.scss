@@ -1,0 +1,67 @@
+.addcard {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+    input {
+      background: transparent;
+      padding: 10px 20px;
+      width: 100%;
+      color: white;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    }
+    select {
+      background: transparent;
+      padding: 10px 20px;
+      width: 100%;
+      color: white;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+      option {
+        background: #2c3e50; 
+        color: #f1f1f1;
+        padding: 10px;
+        font-size: 15px;
+
+        &:hover {
+          background: #4a90e2;
+          color: white;
+        }
+      }
+    }
+
+    button {
+      margin: 0 auto;
+      background: transparent;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      &:hover {
+        filter: drop-shadow(5px 5px 15px #fff);
+      }
+    }
+  }
+}

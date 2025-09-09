@@ -21,6 +21,7 @@ export const googleLogin = async () => {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
     localStorage.setItem("user", JSON.stringify(user));
+    window.location.reload()
     return user;
   } catch (error) {
     console.error("Google login error:", error);

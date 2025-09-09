@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "../sass/Dashboard.scss"
 import dbs from "../components/firebase"
 function Dashboard() {
+    let navigate = useNavigate()
     const [cards, setCards] = useState([])
     const [active, setActive] = useState("All")
     const [filtered, setFiltered] = useState([])
@@ -20,24 +21,46 @@ function Dashboard() {
         fetch()
     }, [])
     const filter = (key) => {
-        setActive(key)
-        if (key == 'All') {
-            setFiltered(cards)
-            return
+        if (key === "ADD") {
+            navigate("/AddUser")
+
         } else {
-            let filteredcards = cards.filter((card)=> card.user == key)
-            setFiltered(filteredcards)
+            setActive(key)
+            if (key == 'All') {
+                setFiltered(cards)
+                return
+            } else {
+                let filteredcards = cards.filter((card) => card.user == key)
+                setFiltered(filteredcards)
+            }
         }
+
     }
     return (
         <div className="dashboard">
+            <div className="res">
+                <select value={active} onChange={(e) => filter(e.target.value)}>
+                    <option value="All">All</option>
+                    <option value="Family">Family</option>
+                    {
+                        users &&
+                        [...users].map((user) => (
+                            <option value={user} key={user}>{user}</option>
+                        ))
+                    }
+                    <option value="ADD"> + Add New Member</option>
+
+                </select>
+
+            </div>
             <div className="left">
-                <button onClick={()=>{filter("All")}} className={active === "All"?"active":''}>All</button>
-                <button onClick={()=>{filter("Family")}} className={active === "Family"?"active":''}>Family</button>
+
+                <button onClick={() => { filter("All") }} className={active === "All" ? "active" : ''}>All</button>
+                <button onClick={() => { filter("Family") }} className={active === "Family" ? "active" : ''}>Family</button>
                 {
                     users &&
                     [...users].map((user) => (
-                        <button onClick={()=>{filter(user)}} className={active === user?"active":''} key={user}>{user}</button>
+                        <button onClick={() => { filter(user) }} className={active === user ? "active" : ''} key={user}>{user}</button>
                     ))
                 }
                 <Link to={"/AddUser"} className="adduser">

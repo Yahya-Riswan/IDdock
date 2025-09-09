@@ -9,14 +9,14 @@ export default function Auth() {
   useEffect(() => {
     const user = localStorage.getItem("user");
     if (user) {
-      navigate("/dashboard");
+      navigate("/Profile");
     }
   }, [navigate]);
 
   const handleGoogleLogin = async () => {
     const user = await googleLogin();
     if (user) {
-      navigate("/dashboard");
+      navigate("/Profile");
     }
   };
 

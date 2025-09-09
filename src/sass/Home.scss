@@ -1,6 +1,7 @@
 .home {
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   min-height: calc(100vh - 80px);
   padding: 10px 5%;
@@ -38,6 +39,20 @@
     }
     .auth:hover {
       filter: drop-shadow(5px 5px 25px white);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    gap: 30px;
+    .left {
+      max-width: 100%;
+    }
+    .right {
+      padding: 10px;
+      width: 100%;
     }
   }
 }
